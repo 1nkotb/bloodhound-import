@@ -23,3 +23,13 @@ Example:
 `bloodhound-import -du neo4j -dp neo4j ~/Desktop/SessionLoop_20190115133114*.json`
 
 If the -du and -dp options are not specified, the tool will try to auto detect these values from the bloodhound config file.
+
+# Important for people running session loops for long period of time: the files tend to be pretty big and it takes quite a lot of time to import.
+
+Install jq and (sudo apt install jq) and sponge (sudo apt install sponge). In my case, it reduced the session json file from 350MB to 2MB.
+
+After install, run:
+
+`jq -M '.sessions |= unique_by({UserName,ComputerName})' somefilename.json | sponge somefilename.json`
+
+Thanks @jeffmcjunkin for putting the jq script out.

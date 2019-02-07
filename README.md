@@ -26,7 +26,7 @@ If the -du and -dp options are not specified, the tool will try to auto detect t
 
 # Important for people running session loops for long period of time: the files tend to be pretty big and it takes quite a lot of time to import.
 
-Install jq and (sudo apt install jq) and sponge (sudo apt install sponge). In my case, it reduced the session json file from 350MB to 2MB.
+Install jq and (sudo apt install jq) and sponge (sudo apt install moreutils). In my case, it reduced the session json file from 350MB to 2MB.
 
 After install, run:
 
